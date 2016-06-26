@@ -1,0 +1,228 @@
+*{
+    font-family: 'Roboto';
+    color: #121A29;
+}
+
+body{
+    background-color: #FAFAFA;
+    height: 100%;  
+}
+
+#welcome{
+    width: 100%;
+    height: 500px;
+    background-image: url('../img/bg/home-bg.jpg');
+    background-size: cover;
+    text-align: center;
+    padding: 100px;
+}
+
+#welcome span{
+    color: #FFF;
+    font-size: 70px;
+    font-weight: 200;
+}
+
+#Header{
+    border-bottom: 1px solid #DBDBDB;
+    background-color: #FFFFFF;
+    width: 100%;
+    float: left;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+
+#wrapper{
+    margin-top: 60px;
+}
+
+#center{
+    border-right: 1px solid #DBDBDB; 
+    margin-top: 60px;  
+}
+
+#footer{
+    border-top: 1px solid #DBDBDB;
+    background-color: #FFFFFF;
+    width: 100%;
+    float: left;
+    padding-top: 50px;
+}
+
+#right{
+    margin-top: 60px;
+}
+
+
+.navigation{
+    float: left;
+}
+
+.navigation-title {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.navigation-title span{
+    font-family: 'Pacifico';
+    font-size: 30px;
+}
+
+.navigation-list{
+    list-style: none;
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation-list li{
+    display: inline-block;
+}
+
+.navigation-list li:last-child a{
+    border-right: 0px solid #DBDBDB;    
+}
+
+.navigation-list li a{
+    display: inline-block;
+    border-right: 1px solid #DBDBDB;
+    padding: 20px 40px;
+    transition: all 0.2s;
+    font-size: 22px;
+    font-weight: 200;
+    text-decoration: none;
+    color: #313131;
+}
+
+.navigation-list li a:hover{
+    background-color: #313131;
+    color: #fff;
+}
+
+.post-container{
+    border: 1px solid #DBDBDB;
+    border-radius: 5px;
+    background-color: #fff;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.post-container-title{
+    width: 100%;
+    border-bottom: 1px solid #DBDBDB;
+    background-color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 10px 20px;
+    height: 75px;
+}
+
+span.post-container-username{
+    color: #121A29;
+    font-size: 18px;
+    font-weight: 300;
+    float: left;
+}
+
+span.post-container-time{
+    color: #121A29;
+    font-size: 18px;
+    font-weight: 300;
+    float: right;
+}
+
+.post-container-content{
+    background-color: #fff;
+}
+
+.post-container-content span{
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+.post-container-content img{
+    width: 100%;
+}
+
+.post-container-user-image{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    border-radius: 25px;
+    margin-right: 20px;
+    float: left;
+}
+
+.post-container-title-text{    
+    float: left;
+}
+
+#login{
+    height: 200px;
+    background-color: #FFF;
+}
+
+.panelSuccessful{
+    background-color: #009646;
+
+}
+.panelFailed{
+    background-color: red;
+}
+
+.panelSuccessful, .panelFailed{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #FFF;
+    opacity: 0.7;
+    padding: 15px 40px;
+    text-align: center;
+    z-index: 999;
+    font-size: 22px;
+
+}
+
+.panelSuccessful span, .panelFailed span{
+    margin-left: 30px;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.profile{
+    width: 100%;
+    height: 300px;
+    margin-bottom: 50px;
+    border: 1px solid #DBDBDB;
+    padding: 20px;
+}
+
+.profile-image{
+    display: inline-block;
+    background-color: #FFF;
+    background-size: cover;
+    border-radius: 50%;
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+
+.profile-user{
+    display: inline-block;
+    padding-left: 100px;
+    width: 60%;
+    float: left;
+}
+
+.profile-user-info{
+    font-size: 40px;
+}
+
+.profile-user-info.username{
+    font-size: 40px;
+    font-weight: 200;
+}
