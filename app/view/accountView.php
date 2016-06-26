@@ -4,8 +4,9 @@ class View{
     public function showContent($data, $article){
         ob_start();
         include('./template/header.php');
-        include('./template/nav.php');           
-        include('./template/_account.php');      
+        include('./template/nav.php');          
+        include('./template/_account.php');  
+        include('./template/_new_article.php');      
         include('./template/_article.php');     
         include('./template/footer.php');
         $output = ob_get_contents();

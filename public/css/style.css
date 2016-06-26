@@ -195,9 +195,10 @@ span.post-container-time{
 
 .profile{
     width: 100%;
-    height: 300px;
+    min-height: 300px;
     margin-bottom: 50px;
     border: 1px solid #DBDBDB;
+    border-radius: 5px;
     padding: 20px;
 }
 
@@ -206,8 +207,8 @@ span.post-container-time{
     background-color: #FFF;
     background-size: cover;
     border-radius: 50%;
-    width: 20%;
-    height: 100%;
+    width: 200px;
+    height: 200px;
     float: left;
 }
 
@@ -215,7 +216,6 @@ span.post-container-time{
     display: inline-block;
     padding-left: 100px;
     width: 60%;
-    float: left;
 }
 
 .profile-user-info{
@@ -225,4 +225,26 @@ span.post-container-time{
 .profile-user-info.username{
     font-size: 40px;
     font-weight: 200;
+}
+
+.article{
+    width: 100%;
+    background-color: #FFF;
+    border: 1px solid #DBDBDB;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.action{
+    padding: 0 !important;
+}
+
+.delete-action{
+    display: inline-block;
+    background-color: #f2dede;
+    color: #a94442;
+    width:100%;
+    height:100%;
+    text-align: center;
+    line-height: 40px;
 }

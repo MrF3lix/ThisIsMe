@@ -49,7 +49,17 @@
 		if($action == 'edit')
 		{
         	echo $controller->edit($id); 
-		}else{
+		}
+		else if($action == 'save'){
+			echo $controller->save($id);
+		}
+		else if($action == 'delete'){
+			echo $controller->delete($id);
+		}
+		else if($action == 'create'){
+			echo $controller->create();
+		}
+		else{
         	echo $controller->index($id); 
 		}     
     }

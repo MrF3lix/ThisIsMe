@@ -7,9 +7,13 @@
             <li><a href="/thisisme/">Home</a></li>
             
             <?php if(isset($_SESSION['token'])){ ?>
+                <?php if($_SESSION['access'] == 1){ ?>
+                    <li><a href="/thisisme/?controller=settings">Settings</a></li> 
+                <?php } ?>
                 <li><a href="/thisisme/?controller=account"><?=$_SESSION['username']?></a></li>   
                 <li><a href="/thisisme/?controller=login&action=logout">Logout</a></li>            
             <?php } ?>
+            
             
             <?php if(!isset($_SESSION['token'])){ ?>
                 <li><a href="/thisisme/?controller=login">Login</a></li>    

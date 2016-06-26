@@ -34,12 +34,12 @@ class Model{
 
     public function getAllArticles(){
         $this->db = new Database();
-        $sqlstr = "SELECT * FROM Article";
+        $sqlstr = "SELECT * FROM Article ORDER BY dateCreated DESC";
 
         $this->db->sqlExec($sqlstr);
-        $this->data = $this->db->_results;
+        $this->article = $this->db->_results;
 
-        while($row = mysqli_fetch_object($this->data)){
+        while($row = mysqli_fetch_object($this->article)){
             $articleArr[] = array(
                 'id' => $row->id,
                 'title' => $row->title,
@@ -55,8 +55,7 @@ class Model{
         $this->db = NULL;
         
         return $this->article;
-    }
-    
+    }    
 }
 
 ?>

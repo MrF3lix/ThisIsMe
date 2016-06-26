@@ -20,7 +20,8 @@ class Model{
                 'surname' => $row->surname,
                 'email' => $row->email,
                 'description' => $row->description,
-                'image' => $row->image
+                'image' => $row->image,
+                'password' => $row->password
             );
         }
 
@@ -61,7 +62,7 @@ class Model{
 
     public function getUserArticles($id){
         $this->db = new Database();
-        $sqlstr = "SELECT * FROM Article WHERE userId = ".$id;
+        $sqlstr = "SELECT * FROM Article WHERE userId = ".$id." ORDER BY dateCreated DESC";
 
         $this->db->sqlExec($sqlstr);
         $this->articel = $this->db->_results;
@@ -82,6 +83,31 @@ class Model{
         $this->db = NULL;
         
         return $this->article;
+    }
+
+    public function updateUserProfile($id)
+    {
+        $this->db = new Database();
+        $sqlstr = "UPDATE User SET username='".$_POST['username']."', image='".$_POST['image']."',name='".$_POST['name']."',surname='".$_POST['surname']."',email='".$_POST['email']."',password='".$_POST['password']."',description='".$_POST['description']."' WHERE id='".$id."';";
+
+        $this->db->sqlExec($sqlstr);
+    }
+
+    public function deleteUserProfile($id)
+    {
+        $this->db = new Database();
+        $sqlstr = "DELETE Usere WHERE id = ".$id;
+
+        $this->db->sqlExec($sqlstr);
+    }
+    
+    public function createNewPost()
+    {
+        $this->db = new Database();
+        $sqlstr = "INSERT INTO Article (id, title, content, picture, dateCreated, userId) VALUES (NULL, '".$_POST['title']."', '".$_POST['content']."', '".$_POST['picture']."',NULL, ".$_SESSION['userid'].");";
+
+        $this->db->sqlExec($sqlstr);
+        echo $sqlstr;
     }
 }
 

@@ -37,9 +37,34 @@ class Controller{
         {
             return null;
         }
+        if($id == 0)
+        {
+            $id = $_SESSION['userid'];
+        }
 
         $this->data = $this->model->getUserProfile($id);
         return $this->view->editContent($this->data);
+    }
+
+    public function save($id)
+    {
+        $this->model->updateUserProfile($id);        
+        header('Location: '.BASEURL.'?controller=account');
+    }
+
+    public function delete($id)
+    {
+        if(!$id == $_SESSIOn['userid'])
+        {
+            $this->model->deleteUserProfile($id);
+        }
+        return null;
+    }
+
+    public function create()
+    {
+        $this->model->createNewPost($_POST);
+        header('Location: '.BASEURL.'?controller=account');
     }
 }
 

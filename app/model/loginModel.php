@@ -13,6 +13,7 @@ class Model{
 				$_SESSION['userid'] = $row->id;
 				$_SESSION['username'] = $row->username;
 				$_SESSION['token'] = uniqid();
+				$_SESSION['access'] = $row->access;
                 return $_SESSION['token'];
 			}
 		}
