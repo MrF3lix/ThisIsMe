@@ -10,11 +10,11 @@ class Controller{
 		$this->view	= new View();
 
 		if(@$_GET['action']=='logout') {
-			$this->logOut();
+			$this->logout();
 		}
 	}
 	
-	public function logOut() {
+	public function logout() {
 		unset($_SESSION);
 		session_destroy();		
         header('Location: '.BASEURL.'');

@@ -5,6 +5,7 @@
 ?>
  <div class="col-md-offset-2 col-md-8 content">
     <div class="col-md-6 col-md-offset-3" id="login">
+    <h2>Login</h2>
         <form method="POST" action="?controller=login">
             <div class="form-group">
                 <input type="text" class="form-control" name="username" placeholder="Username">

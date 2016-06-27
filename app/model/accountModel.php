@@ -75,7 +75,8 @@ class Model{
                 'picture' => $row->picture,
                 'dateCreated' => $row->dateCreated,
                 'username' => $this->getUserFromId($row->userId),
-                'userImage' => $this->getUserImageFromId($row->userId)
+                'userImage' => $this->getUserImageFromId($row->userId),
+                'userId' => $row->userId
             );
         }
 
@@ -85,10 +86,10 @@ class Model{
         return $this->article;
     }
 
-    public function updateUserProfile($id)
+    public function updateUserProfile($id, $image)
     {
         $this->db = new Database();
-        $sqlstr = "UPDATE User SET username='".$_POST['username']."', image='".$_POST['image']."',name='".$_POST['name']."',surname='".$_POST['surname']."',email='".$_POST['email']."',password='".$_POST['password']."',description='".$_POST['description']."' WHERE id='".$id."';";
+        $sqlstr = "UPDATE User SET username='".$_POST['username']."', image='".$image."',name='".$_POST['name']."',surname='".$_POST['surname']."',email='".$_POST['email']."',password='".$_POST['password']."',description='".$_POST['description']."' WHERE id='".$id."';";
 
         $this->db->sqlExec($sqlstr);
     }
@@ -96,18 +97,18 @@ class Model{
     public function deleteUserProfile($id)
     {
         $this->db = new Database();
-        $sqlstr = "DELETE Usere WHERE id = ".$id;
-
-        $this->db->sqlExec($sqlstr);
-    }
-    
-    public function createNewPost()
-    {
-        $this->db = new Database();
-        $sqlstr = "INSERT INTO Article (id, title, content, picture, dateCreated, userId) VALUES (NULL, '".$_POST['title']."', '".$_POST['content']."', '".$_POST['picture']."',NULL, ".$_SESSION['userid'].");";
+        $sqlstr = "DELETE FROM User WHERE id = ".$id;
 
         $this->db->sqlExec($sqlstr);
         echo $sqlstr;
+    }
+    
+    public function createNewPost($data, $image)
+    {
+        $this->db = new Database();
+        $sqlstr = "INSERT INTO Article (id, title, content, picture, dateCreated, userId) VALUES (NULL, '".$data['title']."', '".$data['content']."', '".$image."',NULL, ".$_SESSION['userid'].");";
+
+        $this->db->sqlExec($sqlstr);
     }
 }
 

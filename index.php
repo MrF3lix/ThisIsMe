@@ -68,6 +68,9 @@
         {
             $controller->login();
         }
+		else if($action == 'register'){
+			$controller->register();
+		}
         echo $controller->indexPublic();
     }
 

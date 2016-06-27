@@ -63,27 +63,20 @@ class Database {
 				content VARCHAR(10000),
 				picture VARCHAR(256),
 				dateCreated TIMESTAMP NOT NULL,
-				userId INT NOT NULL )";
+				userId int NOT NULL,
+				CONSTRAINT fk_userId FOREIGN KEY (userId)
+				REFERENCES User(id)
+				ON DELETE CASCADE)";
 		$this->_con->query($sqlstr);
 
 		$sqlstr = "	INSERT INTO User (
 						id, username,image, name, surname, email, password, access, description
 					) VALUES (
-						NULL, 'Admin', './public/img/1/IMG_3026.jpg', 'Admin', 'Admin', 'admin@thisisme.com', 'admin', 1, 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
-					);";
-		$this->_con->query($sqlstr);
-
-		$sqlstr = "	INSERT INTO User (
-						id, username, name, surname, email, password, access, description
-					) VALUES (
-						NULL, 'felixsaaro', './public/img/1/IMG_3026.jpg', Felix', 'Saaro', 'felix.saaro@me.com', 'felix', 1, 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
-					);";
-		$this->_con->query($sqlstr);
-
-		$sqlstr = "	INSERT INTO User (
-						id, username, name, surname, email, password, access, description
-					) VALUES (
-						NULL, 'User', './public/img/1/IMG_3026.jpg', User', 'User', 'user@thisisme.com', 'user', 2, 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
+						NULL, 'Admin', './public/img/upload/IMG_2946.jpg', 'Admin', 'Admin', 'admin@thisisme.com', 'admin', 1, 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
+					),(
+						NULL, 'felixsaaro', './public/img/upload/IMG_2946.jpg', 'Felix', 'Saaro', 'felix.saaro@me.com', 'felix', 1, 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
+					),(
+						NULL, 'User', './public/img/upload/IMG_2946.jpg', 'User', 'User', 'user@thisisme.com', 'user', 2, 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
 					);";
 		$this->_con->query($sqlstr);
 

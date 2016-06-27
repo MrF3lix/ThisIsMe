@@ -18,23 +18,25 @@
                 <th>Password</th>
                 <th>Access</th>
                 <th>Description</th>
-                <th>Action</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
             <?php foreach($user as $key => $value){?>
-
-                <td><?= $value['id']?></td>
-                <td><?= $value['username']?></td>
-                <td><?= $value['image']?></td>
-                <td><?= $value['name']?></td>
-                <td><?= $value['surname']?></td>
-                <td><?= $value['email']?></td>
-                <td><?= $value['password']?></td>
-                <td><?= $value['access']?></td>
-                <td><?= substr($value['description'], 0, 20)?>...</td>
-                <td class="action"><span class="delete-action">Delete</span></td>
-            
+                <tr>
+                    <td><?= $value['id']?></td>
+                    <td><?= $value['username']?></td>
+                    <td><?= $value['image']?></td>
+                    <td><?= $value['name']?></td>
+                    <td><?= $value['surname']?></td>
+                    <td><?= $value['email']?></td>
+                    <td><?= $value['password']?></td>
+                    <td><?= $value['access']?></td>
+                    <td><?= substr($value['description'], 0, 20)?>...</td>
+                    <td class="action"><a href="?controller=account&action=edit&id=<?= $value['id']?>" class="edit-action">Edit</a></td>
+                    <td class="action"><a href="?controller=account&action=delete&id=<?= $value['id']?>" class="delete-action">Delete</a></td>
+                </tr>
             <?php }?>
         </tbody>
     </table>

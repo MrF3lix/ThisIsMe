@@ -67,7 +67,7 @@ body{
 
 .navigation-title span{
     font-family: 'Pacifico';
-    font-size: 30px;
+    font-size: 40px;
 }
 
 .navigation-list{
@@ -117,6 +117,7 @@ body{
     font-weight: 600;
     padding: 10px 20px;
     height: 75px;
+    position: relative;
 }
 
 span.post-container-username{
@@ -124,6 +125,12 @@ span.post-container-username{
     font-size: 18px;
     font-weight: 300;
     float: left;
+}
+
+.edit-article{
+    position: absolute;
+    top: 10px;
+    right: 20px
 }
 
 span.post-container-time{
@@ -161,7 +168,8 @@ span.post-container-time{
 }
 
 #login{
-    height: 200px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     background-color: #FFF;
 }
 
@@ -237,14 +245,35 @@ span.post-container-time{
 
 .action{
     padding: 0 !important;
+    width: 100px;
 }
 
-.delete-action{
-    display: inline-block;
-    background-color: #f2dede;
-    color: #a94442;
+.action a{
+    padding: 0 !important;
     width:100%;
     height:100%;
     text-align: center;
-    line-height: 40px;
+    line-height: 50px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.delete-action{
+    background-color: #f2dede;
+    color: #a94442;
+}
+
+.delete-action:hover{
+    background-color: #a94442;
+    color: #f2dede;
+}
+
+.edit-action{
+    background-color: #dff0d8;
+    color: #3c763d;
+}
+
+.edit-action:hover{
+    background-color: #3c763d;
+    color: #dff0d8;
 }

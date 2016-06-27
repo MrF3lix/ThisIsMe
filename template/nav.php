@@ -17,6 +17,7 @@
             
             <?php if(!isset($_SESSION['token'])){ ?>
                 <li><a href="/thisisme/?controller=login">Login</a></li>    
+                <li><a href="/thisisme/?controller=register">Register</a></li>    
             <?php } ?>
         </ul>
     </div>    

@@ -47,7 +47,8 @@ class Model{
                 'picture' => $row->picture,
                 'dateCreated' => $row->dateCreated,
                 'username' => $this->getUserFromId($row->userId),
-                'userImage' => $this->getUserImageFromId($row->userId)
+                'userImage' => $this->getUserImageFromId($row->userId),
+                'userId' => $row->userId
             );
         }
 
