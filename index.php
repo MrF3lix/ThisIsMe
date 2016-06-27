@@ -14,6 +14,7 @@
 	define('MYSQL_USER' ,"root");
 	define('MYSQL_PW' ,"");
 	define('MYSQL_DB', "thisisme");
+	//COFIGURE THIS AT THE BEGINNING!
     define('BASEURL', 'http://localhost:81/thisisme/');
 
 	include_once('./lib/DB.php') ;

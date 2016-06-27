@@ -69,22 +69,21 @@ class Database {
 				ON DELETE CASCADE)";
 		$this->_con->query($sqlstr);
 
-		$sqlstr = "	INSERT INTO User (
-						id, username,image, name, surname, email, password, access, description
-					) VALUES (
-						NULL, 'Admin', './public/img/upload/IMG_2946.jpg', 'Admin', 'Admin', 'admin@thisisme.com', 'admin', 1, 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
-					),(
-						NULL, 'felixsaaro', './public/img/upload/IMG_2946.jpg', 'Felix', 'Saaro', 'felix.saaro@me.com', 'felix', 1, 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
-					),(
-						NULL, 'User', './public/img/upload/IMG_2946.jpg', 'User', 'User', 'user@thisisme.com', 'user', 2, 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
-					);";
+		$sqlstr = "	INSERT INTO `user` (`id`, `username`, `image`, `name`, `surname`, `email`, `password`, `access`, `description`) VALUES
+(1, 'Admin', './public/img/upload/57712e5b7e010IMG_3058.jpg', 'Admin', 'Admin', 'admin@thisisme.com', 'admin', 1, '<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>'),
+(3, 'User', './public/img/upload/IMG_2946.jpg', 'User', 'User', 'user@thisisme.com', 'user', 2, 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'),
+(4, 'fabioardito', './public/img/upload/57712f3779d7dIMG_3001.jpg', 'Fabio', 'Ardito', 'fabio.ardito@me.com', 'fabio', 2, '<p>Hoi ich bin de Fabio!</p>'),
+(5, 'devinmenzi', './public/img/upload/57712fdb7383aIMG_2909.jpg', 'Devin', 'Menzi', 'devin.menzi@me.com', 'devin', 2, '<p>Hoi ich bin de Devin!</p>'),
+(6, 'janled', './public/img/upload/577130b0d294dIMG_2931.jpg', 'Jan', 'Ledergerber', 'jan.led@me.com', 'jan', 2, '<p>Hoi ich bin de Jan!</p>'),
+(7, 'joelklingler', './public/img/upload/577131862ebb4IMG_3049.jpg', 'Joel', 'Klingler', 'joel.klingler@me.com', 'joel', 2, '');";
 		$this->_con->query($sqlstr);
 
-		$sqlstr = "	INSERT INTO Article (
-						id, title, content, picture, dateCreated, userId
-					) VALUES (
-						NULL, 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.<br><br>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.', './public/img/1/IMG_3026.jpg', NULL, '1'
-					)";
+		$sqlstr = "	INSERT INTO `article` (`id`, `title`, `content`, `picture`, `dateCreated`, `userId`) VALUES
+(NULL, 'Ich bin #fabioulous', '', './public/img/upload/57712f755116dIMG_2926.jpg', NULL, 4),
+(NULL, 'Ich bin #devinitif', '<h3>Chasch echt n&ouml;d...?</h3>', './public/img/upload/5771305c67223IMG_2982.jpg', NULL, 5),
+(NULL, 'Isch es ein Vogel.... Ische es ein A380... NEIN es isch en JIZZZZNNNNAAAAA', '', './public/img/upload/577131b2e6d35IMG_3083.jpg', NULL, 7),
+(NULL, '#FLUGHAFELIFE', '', './public/img/upload/577131db52e72IMG_3156.jpg', NULL, 7),
+(NULL, 'A320 is <3 A320 is Life', '', './public/img/upload/577131fdb5ab7IMG_3207.jpg', NULL, 7);";
 		$this->_con->query($sqlstr);
 	}
 }
