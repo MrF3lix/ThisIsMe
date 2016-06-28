@@ -12,7 +12,9 @@ class Controller{
     }
 
     public function index($id)
-    {        
+    {   
+        //Ino $id is provided or it is set to 0 the $id will be set by the current user id
+        //This way it's not necessary to provide an $id if we want to the current user 
         if(!isset($id))
         {
             $id = $_SESSION['userid'];
@@ -33,6 +35,8 @@ class Controller{
 
     public function edit($id)
     {
+        //Ino $id is provided or it is set to 0 the $id will be set by the current user id
+        //This way it's not necessary to provide an $id if we want to the current user 
         if(!isset($id))
         {
             return null;
@@ -48,6 +52,9 @@ class Controller{
 
     public function save($id)
     {
+        //Is a file provided in the upload 
+        // -> if yes then move it to the upload direcotry
+        // -> if no then it will take the saved picture which was already in the account
         if(isset($_FILES["pictureUpload"]["name"]))
         {
             $target_dir = "./public/img/upload/";
@@ -69,12 +76,14 @@ class Controller{
             header('Location: '.BASEURL.'?controller=login&action=logout'); 
         }
         else{
+            //return to previous URL
             header("Location: {$_SERVER['HTTP_REFERER']}");
         }
     }
 
     public function create()
     {
+        //file upload when creating an article 
         $target_dir = "./public/img/upload/";
         $target_file = $target_dir . uniqid() . basename($_FILES["picture"]["name"]);
         

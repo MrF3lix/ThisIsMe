@@ -5,6 +5,7 @@ class Model{
     public $articel;
     public $db;
 
+    //returns a userprofile with the given ID
     public function getUserProfile($id){        
         $this->db = new Database();
         $sqlstr = "SELECT * FROM User WHERE id = ".$id;
@@ -31,6 +32,7 @@ class Model{
         return $this->data;
     }
 
+    //returns username from given ID
     public function getUserFromId($userId)
     {
         $this->db = new Database();
@@ -45,6 +47,7 @@ class Model{
         return "";
     }
     
+    //returns user image from ID
     public function getUserImageFromId($userId)
     {
         $this->db = new Database();
@@ -60,6 +63,7 @@ class Model{
         return "";
     }
 
+    //get article from given ID
     public function getUserArticles($id){
         $this->db = new Database();
         $sqlstr = "SELECT * FROM Article WHERE userId = ".$id." ORDER BY dateCreated DESC";
@@ -86,6 +90,7 @@ class Model{
         return $this->article;
     }
 
+    //Update the user profile
     public function updateUserProfile($id, $image)
     {
         $this->db = new Database();
@@ -94,6 +99,7 @@ class Model{
         $this->db->sqlExec($sqlstr);
     }
 
+    //delete the user profile with given ID
     public function deleteUserProfile($id)
     {
         $this->db = new Database();

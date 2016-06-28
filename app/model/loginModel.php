@@ -21,6 +21,7 @@ class Model{
 
     }
 
+	//Shows login form with error message
 	public function showForm(){
 		$this->data = array('status'=>false, 'errorMsg'=>'Incorrect login data!');
 		return $this->data;

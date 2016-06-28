@@ -26,9 +26,9 @@ class Controller{
             $this->login($_POST);
             
 			if(isset($_SESSION['token'])){  
+                //Login succeded
                 header('Location: '.BASEURL.'');                
 			} else {
-                //TODO render panel
 				echo $this->view->showContent($this->model->showForm());
             }
 		} else {

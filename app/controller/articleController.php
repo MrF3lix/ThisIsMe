@@ -29,9 +29,11 @@ class Controller{
 
     public function save()
     {
+        //Upload file if one is provided
         if(isset($_FILES["pictureUpload"]["name"]))
         {
             $target_dir = "./public/img/upload/";
+            //When uploading the file the filename will be with a uniq id so the user can upload files with the same name
             $target_file = $target_dir . uniqid() . basename($_FILES["pictureUpload"]["name"]);
             
             if(isset($_POST["title"])) {

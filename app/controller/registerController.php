@@ -18,8 +18,10 @@ class Controller{
 
     public function register()
     {
+        //Validate form
         if(isset($_POST['username']) && isset($_POST['surname']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['password-repeat']))
         {
+            //Validate if password and password-repeat are the same
             if($_POST['password'] == $_POST['password-repeat'])
             {
                 $this->model->newUser($_POST);
@@ -35,6 +37,7 @@ class Controller{
 
     }
 
+    //will be called via '$controller=register/action=error' to display an error message
     public function hasError(){
         $this->error = "Incorrect data!";
     }

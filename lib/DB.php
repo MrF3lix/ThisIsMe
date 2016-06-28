@@ -32,6 +32,7 @@ class Database {
 		$this->_results = $this->_con->query($sqlstr);
 	}
 
+	//DB Installation
 	private function dbInstall(){
 		$this->_con = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PW);
 
