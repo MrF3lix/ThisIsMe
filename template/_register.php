@@ -1,3 +1,8 @@
+<?php 
+    if(isset($error)){
+        echo '<div class="panelFailed">'.$error.'</div>';
+    }
+?>
 <div class="col-md-offset-2 col-md-8 content">
     <div class="col-md-6 col-md-offset-3" id="login">
     <h2>Register</h2>

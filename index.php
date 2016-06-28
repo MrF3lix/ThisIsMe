@@ -69,6 +69,9 @@
         {
             $controller->login();
         }
+		else if($action == 'error'){
+			echo $controller->hasError();
+		}
 		else if($action == 'register'){
 			$controller->register();
 		}

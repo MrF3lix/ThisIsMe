@@ -1,7 +1,7 @@
 <?php
 
 class View{
-    public function showPublicContent(){
+    public function showPublicContent($error){
         ob_start();
         include('./template/header.php');
         include('./template/nav.php');           

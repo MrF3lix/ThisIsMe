@@ -1,10 +1,9 @@
 <div id="Header" class="col-xs-12">
     <div class="navigation col-md-offset-2 col-md-8">
         <div class="navigation-title">
-            <span>thisisme</span>
+            <span><a href="/thisisme/">thisisme</a></span>
         </div>
         <ul class="navigation-list">
-            <li><a href="/thisisme/">Home</a></li>
             
             <?php if(isset($_SESSION['token'])){ ?>
                 <?php if($_SESSION['access'] == 1){ ?>

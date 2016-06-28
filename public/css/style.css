@@ -65,9 +65,11 @@ body{
     margin-top: 10px;
 }
 
-.navigation-title span{
+.navigation-title span a{
     font-family: 'Pacifico';
     font-size: 40px;
+    color: #313131;
+    text-decoration: none;
 }
 
 .navigation-list{
@@ -191,7 +193,7 @@ span.post-container-time{
     padding: 15px 40px;
     text-align: center;
     z-index: 999;
-    font-size: 22px;
+    font-size: 29px;
 
 }
 
