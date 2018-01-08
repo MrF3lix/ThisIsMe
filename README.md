@@ -1,4 +1,4 @@
-#Installation Guide
+# Installation Guide
 
 1. Install XAMPP Server
 2. Copy Repository to C:\xampp\htdocs
